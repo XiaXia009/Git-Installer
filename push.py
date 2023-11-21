@@ -2,8 +2,13 @@ import os
 import time
 import subprocess
 import desktop_finder
+import json
 
 def init():
+    script_dir = os.path.dirname(os.path.realpath(__file__))
+    json_path = os.path.join(script_dir, "lib", "userdata.json")
+    with open(json_path, 'r') as json_file:
+        data = json.load(json_file)
     path = desktop_finder.find()
     subprocess.run(f"git init", shell=True, cwd=path)
     drive_removal()
@@ -29,9 +34,6 @@ def drive_removal():
         drives = current_drives
 
 def main():
-    path = desktop_finder.find()
-    subprocess.run(f"git init", shell=True, cwd=path)
-    pass
-
+    subprocess.run(f"git clone ")
 
 init()
