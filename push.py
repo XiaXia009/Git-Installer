@@ -7,12 +7,13 @@ import json
 class Git_init():
     def init(self):
         script_dir = os.path.dirname(os.path.realpath(__file__))
-        json_path = os.path.join(script_dir, "lib", "userdata.json")
+        json_path = os.path.join(script_dir, "set", "userdata.json")
         self.project = str(data.get('project', ''))
         with open(json_path, 'r') as json_file:
             data = json.load(json_file)
         self.path = desktop_finder.find()
         subprocess.run(f"git init", shell=True, cwd=self.path)
+        Git_init.clone()
         Git_init.drive_removal()
 
     def drive_removal(self):
@@ -30,9 +31,13 @@ class Git_init():
             if len(current_drives) < len(drives):
                 removed_drive = set(drives) - set(current_drives)
                 print(f"Drive {removed_drive} has been removed.")
-                Git_init.main()
+                Git_init.push()
                 break
             drives = current_drives
 
-    def main(self):
+    def clone(self):
         subprocess.run(f"git clone {self.project}", cwd=self.path)
+        return
+    
+    def push(self):
+        pass

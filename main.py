@@ -6,7 +6,7 @@ import push
 class Git():
     def __init__(self):
         self.script_dir = os.path.dirname(os.path.realpath(__file__))
-        self.json_path = os.path.join(self.script_dir, "lib", "userdata.json")
+        self.json_path = os.path.join(self.script_dir, "set", "userdata.json")
         self.git_path = os.path.join(self.script_dir, "lib", "Git.exe")
         self.result = subprocess.run(self.git_path, shell=True, capture_output=True, text=True)
         with open(self.json_path, 'r') as json_file:
@@ -17,9 +17,11 @@ class Git():
     def install(self):
         if self.result.returncode == 0:
             print("Installer:[installed]")
+            self.set_git()
         else:
             print("ERROR:[File not found]")
-        self.set_git()
+            self.set_git()
+        
 
     def set_git(self):
         subprocess.run(["git", "config", "--global", "user.name", self.name])
