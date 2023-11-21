@@ -8,9 +8,9 @@ class Git_init():
     def init(self):
         script_dir = os.path.dirname(os.path.realpath(__file__))
         json_path = os.path.join(script_dir, "set", "userdata.json")
-        self.project = str(data.get('project', ''))
         with open(json_path, 'r') as json_file:
             data = json.load(json_file)
+        self.project = str(data.get('project', ''))
         self.path = desktop_finder.find()
         subprocess.run(f"git init", shell=True, cwd=self.path)
         Git_init.clone()
