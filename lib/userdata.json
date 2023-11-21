@@ -1,4 +1,6 @@
 {
     "name": "your name",
-    "email": "your email@gmail.com"
+    "email": "your email@gmail.com",
+    "project": "your project",
+    "__example__": "https://github.com/XiaXia009/Git-Installer.git"
 }
