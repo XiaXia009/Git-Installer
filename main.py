@@ -1,6 +1,7 @@
 import os
 import subprocess
 import json
+import push
 
 class Git():
     def __init__(self):
@@ -27,6 +28,7 @@ class Git():
         print(f"Git user.name set to: {result.stdout.strip()}")
         result = subprocess.run(["git", "config", "--global", "user.email"], capture_output=True, text=True)
         print(f"Git user.email set to: {result.stdout.strip()}")
+        push.init()
 
 if __name__ == "__main__":
     git_installer = Git()
