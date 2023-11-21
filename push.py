@@ -13,8 +13,8 @@ class Git_init():
         self.project = str(data.get('project', ''))
         self.path = desktop_finder.find()
         subprocess.run(f"git init", shell=True, cwd=self.path)
-        Git_init.clone()
-        Git_init.drive_removal()
+        self.clone()
+        self.drive_removal()
 
     def drive_removal(self):
         drives = []
@@ -31,7 +31,7 @@ class Git_init():
             if len(current_drives) < len(drives):
                 removed_drive = set(drives) - set(current_drives)
                 print(f"Drive {removed_drive} has been removed.")
-                Git_init.push()
+                self.push()
                 break
             drives = current_drives
 
@@ -40,4 +40,5 @@ class Git_init():
         return
     
     def push(self):
+        print("push")
         pass
