@@ -36,7 +36,3 @@ class Git_init():
 
     def main(self):
         subprocess.run(f"git clone {self.project}", cwd=self.path)
-
-if __name__ == "__main__":
-    run = Git_init()
-    run.init()
