@@ -26,14 +26,11 @@ class Git_installer():
             print("ERROR:[File not found]")
             subprocess.run(self.git_path, shell=True, capture_output=True, text=True)
 
-
     def set_git(self):
-        subprocess.run(["git", "config", "--global", "user.name", self.name])
-        subprocess.run(["git", "config", "--global", "user.email", self.email])
-        result = subprocess.run(["git", "config", "--global", "user.name"])
-        print(f"Git user.name set to: {result.stdout.strip()}")
-        result = subprocess.run(["git", "config", "--global", "user.email"])
-        print(f"Git user.email set to: {result.stdout.strip()}")
+        os.system(f"git config --global user.name {self.name}")
+        os.system(f"git config --global user.email {self.email}")
+        os.system(f"git config --global user.name")
+        os.system(f"git config --global user.email")
 
 class Git_clone():
     def init(self):
@@ -74,7 +71,7 @@ class Git_clone():
         print("push")
         pass
 
-    def find():
+    def find(self):
         onedrive_path = os.path.join(os.path.expanduser("~"), "OneDrive")
         onedrive_path = os.path.join(onedrive_path, "桌面")
 
