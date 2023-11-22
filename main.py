@@ -18,6 +18,11 @@ class Git_installer():
         self.name = str(data.get('name', ''))
         self.email = str(data.get('email', ''))
 
+    def restart_main(self):
+        print("Restarting")
+        main_script = os.path.join(self.script_dir, "main.py")
+        subprocess.run(["python", main_script], shell=True)
+
     def install(self):
         if self.install_state == True:
             print("Installer:[installed]")
@@ -25,12 +30,15 @@ class Git_installer():
         else:
             print("ERROR:[File not found]")
             subprocess.run(self.git_path, shell=True, capture_output=True, text=True)
+            self.restart_main()
 
     def set_git(self):
         os.system(f"git config --global user.name {self.name}")
         os.system(f"git config --global user.email {self.email}")
         os.system(f"git config --global user.name")
         os.system(f"git config --global user.email")
+        run = Git_clone()
+        run.init()
 
 class Git_clone():
     def init(self):
