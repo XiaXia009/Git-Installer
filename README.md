@@ -20,7 +20,7 @@
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/XiaXia009"><img src="https://avatars.githubusercontent.com/u/107758517?v=4" width="100px;" alt="Ray"/><br /><sub><b>Ray</b></sub></a><br /><a title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ThanatosDi"><img src="https://avatars.githubusercontent.com/u/12424898?v=4" width="100px;" alt="ThanatosDi"/><br /><sub><b>ThanatosDi</b></sub></a><br /><a title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/xireno"><img src="https://avatars.githubusercontent.com/u/127600180?v=4" width="100px;" alt="xireno"/><br /><sub><b>ThanatosDi</b></sub></a><br /><a title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
