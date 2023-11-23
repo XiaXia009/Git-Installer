@@ -6,7 +6,7 @@
 開啟set資料夾 編輯`userdata.json`  
 之後開啟main.py
 
-#json 格式
+# json 格式
 ```json
 {
     "name": "your name",
