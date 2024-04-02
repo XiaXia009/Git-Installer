@@ -1,4 +1,4 @@
-# Git-Installer(擱置中)
+# Git-Installer(未完成-擱置中)
  Git的 安裝/設定/下載/推送 腳本  
 
 # Use
